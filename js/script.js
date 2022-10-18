@@ -23,6 +23,7 @@ function play() {
     const NUM_BOMB = 16;
     const bombsPosition = [];
     let numCell;
+    let score = 0;
     const fieldGame = document.getElementById('field-game');
     fieldGame.innerHTML = '';
     
@@ -51,20 +52,34 @@ function play() {
         titleHTML.classList = 'd-none';
     }
 
+    function clickCell() {
+        const MAX_ATTEMPT = numCell - NUM_BOMB;
+        score++;
+        this.classList.add('right');
+        this.removeEventListener('click', clickCell);
+        document.getElementById("contatore-caselle").innerHTML = 'Hai scoperto ' + score + ' celle!';
+        console.log(score);
+        if(score == MAX_ATTEMPT) {
+            containeMsgHTML.className = 'container-pop-up visible';
+            document.getElementById('msg').innerHTML = 'Hai Vinto!' + '<br>' +  'Hai scoperto tutte le ' + score + ' celle!'  + '<br>' + 'Gioca di nuovo!'
+        }
+    }
+
 
     // funzione che genera la cella
     function drawCell(num) {
         const cellPerSide = Math.sqrt(numCell);
         const cell = document.createElement('div');
+
         cell.className = 'square';
         cell.style.width = `calc(100% / ${cellPerSide})`;
         cell.style.height = `calc(100% / ${cellPerSide})`;
         cell.innerHTML = `
             <span></span>
         `;
-
         if(bombsPosition.includes(num)) {
             cell.classList.add('bomb');
+            cell.classList.add('bomba');
             cell.addEventListener('click', function() {
                 const arrBomb = document.querySelectorAll('.bomb');
                 for(let i = 0; i < arrBomb.length; i++) {
@@ -72,12 +87,10 @@ function play() {
                 }
                 // proprietà per far apparire il messaggio di Game Over
                 containeMsgHTML.className = 'container-pop-up visible';
-                document.getElementById('msg').innerHTML = 'Game Over! Riprova di nuovo!'
+                document.getElementById('msg').innerHTML = 'Game Over!' + '<br>' + 'Hai scoperto ' + score + ' celle giuste, riprova!'
             });
             } else {
-                cell.addEventListener('click', function() {
-                    this.classList.add('right');
-                });
+                cell.addEventListener('click', clickCell);
             }
             return cell;
         }
