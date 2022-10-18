@@ -79,7 +79,6 @@ function play() {
         `;
         if(bombsPosition.includes(num)) {
             cell.classList.add('bomb');
-            cell.classList.add('bomba');
             cell.addEventListener('click', function() {
                 const arrBomb = document.querySelectorAll('.bomb');
                 for(let i = 0; i < arrBomb.length; i++) {
