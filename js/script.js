@@ -70,7 +70,7 @@ function play() {
     function drawCell(num) {
         const cellPerSide = Math.sqrt(numCell);
         const cell = document.createElement('div');
-
+        document.getElementById("contatore-caselle").innerHTML = 'Hai scoperto ' + score + ' celle!';
         cell.className = 'square';
         cell.style.width = `calc(100% / ${cellPerSide})`;
         cell.style.height = `calc(100% / ${cellPerSide})`;
@@ -86,7 +86,7 @@ function play() {
                 }
                 // proprietà per far apparire il messaggio di Game Over
                 containeMsgHTML.className = 'container-pop-up visible';
-                document.getElementById('msg').innerHTML = 'Game Over!' + '<br>' + 'Hai scoperto ' + score + ' celle giuste, riprova!'
+                document.getElementById('msg').innerHTML = 'Game Over!' + '<br>' + 'Hai scoperto ' + score + ' celle!' + '<br>' +  'Ritenta!'
             });
             } else {
                 cell.addEventListener('click', clickCell);
