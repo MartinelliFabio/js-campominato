@@ -1,0 +1,112 @@
+:root {
+    --beige: #dad7cd;
+    --dark-beige: #a3b18a;
+    --light-green: #588157;
+    --green: #3a5a40;
+    --dark-green: #344e41;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--dark-beige);
+}
+
+header, footer {
+    background-color: var(--light-green);
+    height: 80px;
+    color: var(--black);
+    z-index: 9999;
+}
+
+main {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+button {
+    background-color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+}
+
+.my-text-green {
+    color: var(--dark-green);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 500px;
+    height: 500px;
+    background-color: var(--beige);
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.container-pop-up{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255,255,255,0.25);
+	z-index: 100;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	bottom: 80px;
+	right: 0;
+}
+
+.pop-up {
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	text-align: center;
+	width: 250px;
+    height: 200px;
+    margin-top: 67px;
+}
+
+.right {
+    background-color: var(--green);
+}
+
+.bomba {
+    background-color: red;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/92/Font_Awesome_5_solid_bomb.svg');
+    background-position: center;  
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+header a, footer a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+footer span {
+    font-size: 18px;
+}
+
+button:hover {
+    opacity: 90%;
+    transition: 0.3s;
+}
+
+header a:hover{
+    color: var(--black);
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--black);
+    text-decoration: underline;
+    opacity: 90%;
+    transition: 0.5s;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="./js/libreria.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Div con class vh-100 per prendere tutta la pagina -->
+<div class="vh-100">
+    <!-- Header -->
+    <header class="d-flex justify-content-around align-items-center">
+        <a href="#" class=""><h2 class="fw-bold text-white"><img src="./img/Logo.png" alt="Logo" class="me-3">Campo Minato</h2></a>
+        <!-- Sezione per la scelta della difficoltà -->
+        <div class="d-flex">
+            <select name="livello" id="livello" class="rounded-2 px-2">
+                <option value="0">---</option>
+                <option value="1">Easy</option>
+                <option value="2">Hard</option>
+                <option value="3">Crazy</option>
+            </select>
+            <button class="rounded-2 ms-1 px-4 py-1 fw-bold text-white" id="play">Play</button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="d-flex justify-content-center align-items-center flex-column">
+
+        <!-- Sezione del messaggio di Game over e del div che andrò a coprire la sezione principale -->
+        <div class="container-pop-up invisible" id="container-msg">
+            <div class="pop-up d-flex justify-content-center align-items-center">
+                <div id="msg" class="fw-bold fs-5"></div>
+            </div>
+        </div>
+        <h1 class="text-center p-3 fw-bold display-2 text-uppercase mb-5 text-white">Prato Fiorito</h1>
+        <h2 id="title" class="text-center p-3 fw-bold display-5 text-uppercase w-75 my-text-green">Seleziona la difficoltà del livello in alto a destra e clicca Play!</h2>
+        
+        <!-- Div del gioco -->
+        <div id="field-game" class="d-flex justify-content-center align-items-center">
+    
+    </main>
+
+    <!-- Footer -->
+    <footer class="d-flex justify-content-center align-items-center text-white">
+        <span class="fw-bold">Made By <a href="https://github.com/MartinelliFabio">Fabio Martinelli</a> - Boolean</span>
+    </footer>
+
+</div>
+
+
+<script src="./js/script.js">
+
+</script>
+
+</body>
+</html>
